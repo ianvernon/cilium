@@ -28,6 +28,9 @@ function bpf_compile()
 	OUT=$2
 	TYPE=$3
 
+	clang -E -O2 -target bpf					\
+	      -I$RUNDIR/globals -I$EPDIR -I$LIB/include			\
+	      -c $LIB/$IN -o $EPDIR/$IN
 	clang -O2 -target bpf -emit-llvm				\
 	      -Wno-address-of-packed-member -Wno-unknown-warning-option	\
 	      -I$RUNDIR/globals -I$EPDIR -I$LIB/include			\
