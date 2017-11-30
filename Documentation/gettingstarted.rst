@@ -14,6 +14,7 @@ This document includes three different guides:
  * `Getting Started Using Kubernetes`_ with HTTP (Estimated time 10-15 minutes)
  * `Getting Started Using Docker`_ with HTTP
  * `Getting Started Using Mesos`_ with HTTP
+ * `Getting Started Using Istio on Kubernetes`_
  * `Getting Started Using Kubernetes with Kafka`_
 
 The guides follow the same basic flow.   The flow in the Kubernetes variant
@@ -1144,3 +1145,5 @@ For assistance on any of the Getting Started Guides, please reach out and ask a 
 Slack channel <https://cilium.herokuapp.com>`_.
 
 .. include:: gettingstarted_kafka.rst
+
+.. include:: gettingstarted_istio.rst
