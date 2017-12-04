@@ -88,7 +88,7 @@ func ParseToCiliumRule(namespace, name string, r *api.Rule) *api.Rule {
 					// The user can explicitly specify the namespace in the
 					// FromEndpoints selector. If omitted, we limit the
 					// scope to the namespace the policy lives in.
-					if _, ok := retRule.Ingress[i].FromEndpoints[j].MatchLabels[labels.LabelSourceK8sKeyPrefix+PodNamespaceLabel]; !ok {
+					if !retRule.Ingress[i].FromEndpoints[j].HasKey(labels.LabelSourceK8sKeyPrefix + PodNamespaceLabel) {
 						retRule.Ingress[i].FromEndpoints[j].MatchLabels[labels.LabelSourceK8sKeyPrefix+PodNamespaceLabel] = namespace
 					}
 				}
